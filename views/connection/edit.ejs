@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<div class="container">
+    <div class="container-center">
+        <form action = '/connections/<%= connection.id%>?_method=PUT' method = 'POST' class="mt-20">
+            <label for="topic">Title</label>
+            <input type="text" id="topic" name="topic" placeholder="Enter topic.." value="<%= connection.topic %>" minlength="3" required>
+
+            <label for="name">Producer</label>
+            <input type="text" id="name" name="name" placeholder="Enter title.." value="<%= connection.name %>" minlength="3" required>
+
+            <label for="details">Details</label>
+            <textarea id="details" name="details" placeholder="Enter detail.." required minlength="3"><%= connection.details %></textarea>
+        
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" value="<%= connection.date %>" required>
+
+            <label for="startTime">Start Time</label>
+            <input type="time" id="startTime" name="startTime" value="<%= connection.startTime %>" required>
+
+            <label for="endTime">End Time</label>
+            <input type="time" id="endTime" name="endTime" value="<%= connection.endTime %>" required>
+
+            <label for="image">Image URL</label>
+            <input type="url" id="image" name="image" placeholder="Enter image url.." value="<%= connection.image %>" required>
+        
+            <button class="btn submit-btn">Update Game Info</button>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>
